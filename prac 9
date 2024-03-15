@@ -1,0 +1,56 @@
+class Basic:
+    pass
+
+class AI(Basic):
+    def set_message(self, message=True):
+        self.message = message
+        
+    def result(self):
+        if self.message == True:
+            return print("AIR")
+        
+class GR(Basic):
+    def set_message(self, message=True):
+        self.message = message
+        
+    def result(self):
+        if self.message == True:
+            return print("Ground")
+        
+class FI(Basic):
+    def set_message(self, message=True):
+        self.message = message
+        
+    def result(self):
+        if self.message == True:
+            return print("Fire")
+        
+class WA(Basic):
+    def set_message(self, message=True):
+        self.message = message
+        
+    def result(self):
+        if self.message == True:
+            return print("Water")
+
+class TH(AI, GR):
+    pass
+
+class SW(GR, WA):
+    pass
+
+class BF(FI, AI):
+    pass
+
+class NO(FI, WA):
+    pass
+
+class SG(SW, BF):
+    pass
+
+result = SG()
+result2 = NO()
+result.set_message()
+result.result()
+result2.set_message()
+result2.result()
